@@ -5,9 +5,6 @@ const prompt = require('prompt-sync')();
 
 class Game {
     constructor(){  
-        // this.player1 = new Human("Player 1");
-        // this.player2 = new Human("Player 2");
-        //this.cpu = new Ai("AI");
         let startGameMenu = prompt('Welcome to RPSLR. Select "1" for Player vs Player. Select "2" for Player vs Computer: ');
         console.log('\n');
             if (startGameMenu === "1") {
@@ -27,9 +24,8 @@ class Game {
                     this.startGameMenu;
                 }
     }
-    
+
      run() {
-        //Human.chooseItem();
         do {
         let player1Choice = this.player1.chooseItem();
         let player2Choice = this.player2.chooseItem();
@@ -131,27 +127,18 @@ class Game {
 
         } while (this.player1.score <= 3 && (this.player2.score <+ 3));
             this.gameWinner();
-            this.startOver();
+        }
 
-        }
     gameWinner() {
-        if(this.player1.score === 3) {
+        if(this.player1.score === 3) {  
             console.log(this.player1.name + ' wins the game!! : ' + this.player1.score + ' - ' + this.player2.score + '\n');
-        }
-            else if (this.player2.score === 3) {
-            console.log(this.player2.name + ' wins the game!! : ' + this.player1.score + ' - ' + this.player2.score + '\n');
+            console.log('Thanks for playing RPSLS! - Enter "npm start" to start a new game.');
             }
+                else if (this.player2.score === 3) {
+                    console.log(this.player2.name + ' wins the game!! : ' + this.player1.score + ' - ' + this.player2.score + '\n');
+                     console.log('Thanks for playing RPSLS! - Enter "npm start" to start a new game.');
+                }   
     
-    }
-    startOver() {
-        let newGame = prompt('Would you like to play another game? Select "1" for <Yes> --- "2" for <No>: ')
-        console.log('\n');
-        if (newGame === '1') {
-            this.run();
-        }
-            else if (newGame === '2') {
-                console.log('Thanks for playing RPSLS!');
-            }
     }
 }
 module.exports = Game;
