@@ -1,16 +1,18 @@
-const Player = require('./Player')
+const Player = require('./Player');
+const prompt = require('prompt-sync')();
 
 class Ai extends Player {
     constructor(name){
         super(name);
-        this.name = HAL;
+        this.score = 0;
         this.choiceCollection = [
-            "Rock",
-            "Paper",
-            "Scissors",
-            "Lizard",
-            "Spock"
+            'Rock',
+            'Paper',
+            'Scissors',
+            'Lizard',
+            'Spock'
         ];
+        this.name = 'HAL 9000';
     } 
     chooseItem() {
         //console.log('${CPU make a selection: ')
@@ -18,5 +20,4 @@ class Ai extends Player {
         return chosenItem;
     }
 }
-
 module.exports = Ai;

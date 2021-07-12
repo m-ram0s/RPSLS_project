@@ -15,8 +15,10 @@ class Human extends Player {
         this.score = 0;
     }
     chooseItem(){
-        console.log(this.name + 'Make a Selection: ')
-        let chosenItem = prompt("\nRock = 1\nPaper =2\nScissors = 3\nLizard =  4\nSpock = 5");
+        console.log(this.name + ', make a selection: ')
+        let chosenItem = prompt('Rock = 1    Paper = 2    Scissors = 3    Lizard =  4    Spock = 5: ');
+        console.log('\n');
+        let selection;
         if (chosenItem === '1'){
             selection = this.choiceCollection[0];
             return selection;
@@ -33,7 +35,7 @@ class Human extends Player {
             selection = this.choiceCollection[3];
             return selection;
         }
-        else if (chosenItem === '5');{
+        else if (chosenItem === '5'){
             selection = this.choiceCollection[4]
             return selection;
         }
